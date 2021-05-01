@@ -1,3 +1,43 @@
+.App-normalFont {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 1px 1.25px 1px black; 
+  color: #FDD017;
+}
+
+.App-title {  
+  font-weight: 300;
+  padding-top: 1em;
+  -webkit-transform: scale(1, 1.5);
+  -moz-transform: scale(1, 1.5);
+  -o-transform: scale(1, 1.5);
+  transform: scale(1, 1.5);
+}
+
+.App-question {
+  max-width: 600px;
+  vertical-align: top;
+  -webkit-transform: scale(1, 1.25);
+  -moz-transform: scale(1, 1.25);
+  -o-transform: scale(1, 1.25);
+  transform: scale(1, 1.25);
+}
+
+.App-answer {
+  font-size: calc(10px + 1.25vmin);
+}
+
+.App-question-width {
+  max-width: 600px;
+}
+
+.App-question-radio {
+  vertical-align: top;
+}
+
+.App-hr-thickness {
+  border-bottom: 2px solid #808080;
+}
+
 .App {
   text-align: center;
 }
