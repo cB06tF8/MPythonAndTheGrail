@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {submitContentToIPFS} from './IPFSSubmit.js';
+import {submitContentToIPFS} from './UploadFilesHelper.js';
 import '../App.css';
 
 /** @dev https://www.npmjs.com/package/ipfs-http-client (v33.1.1) */
@@ -13,20 +13,20 @@ function UploadFiles() {
   const [usedQuestions, setUsedQuestions] = useState([]);
   const [currQuest, setCurrQuest] = useState(0);
 
+  /** @dev function uploads the file chosen to IPFS. For now it is one at a time. Use the F12
+    * tools to view and copy the returned IPFS address. See submitContentToIPFS function for 
+    * more info. */  
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('in handleSubmit...');
-
-    //var retVal = tryThis2('buffalo bob');
-    //console.log('tryThis returns: ' + retVal);
 
     var retVal = submitContentToIPFS(buffer);
-    console.log('back from submitContentToIPFS: ' + retVal);
+    // async func - nothing is returned at first
+    //console.log('back from submitContentToIPFS: ' + retVal);
   }
 
+  /** @dev function prepares the file chosen for uploading by placing it in a Buffer */
   var captureFiles = function captureFiles(event) { 
     event.preventDefault();
-    //console.log('we are in captureFiles');
     const filesToUpload = event.target.files[0];
     
     // convert the file to a buffer fto prepare as an upload to IPFS
@@ -34,7 +34,6 @@ function UploadFiles() {
     reader.readAsArrayBuffer(filesToUpload);
     reader.onloadend = () => {
       setBuffer(Buffer(reader.result));
-      //console.log('buffer from state after: ' + {buffer});
     }
   }
 
@@ -43,17 +42,19 @@ function UploadFiles() {
       <div className="container">
         <div className="row align-items-center my-5">
           <div className="col-lg-8">
-            <h3>Upload Sound Files and Questions JSON File to IFPS</h3>
+            <h3>Upload Files to IFPS</h3>
             <hr/>
             <div>
               <form onSubmit={handleSubmit} className='text-left' >
                 <p>&nbsp;</p>
-                <h5>Choose a File To Upload</h5>
+                <h5>Choose sound files (or the questions JSON file) to Upload</h5>
                 <input type='file' id='filesToUpload' onChange={captureFiles} />&nbsp;&nbsp;
                 <input type='submit' value='Upload File to IPFS' className='btn btn-outline-secondary btn-sm' style={{color: 'black'}}/>
               </form>
-            </div>
-            <br/>            
+              <br/>
+              <hr/>
+            </div>            
+            Use F12 tools to view the result of a successful upload and record the IPFS address
           </div>
           <br />
           <br />           

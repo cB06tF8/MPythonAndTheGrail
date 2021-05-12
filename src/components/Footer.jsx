@@ -6,7 +6,7 @@ function Footer() {
       <footer class="py-2 bg-dark fixed-bottom">
         <div class="container">
           <p class="m-1 text-center text-white sm">
-            All sounds and pictures Copyright &copy; 1975 Python (Monty) Pictures, Ltd.
+            All sounds and pictures &copy; Python (Monty) Pictures, Ltd.
           </p>
         </div>
       </footer>

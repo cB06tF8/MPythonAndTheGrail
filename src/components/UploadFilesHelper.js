@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 const ipfsClient = require('ipfs-http-client');
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https'});
 
+/** @dev function submits the file (in buffer) to IPFS and handles async return */
 export const submitContentToIPFS = async(buffer) => {
   var returnMsg = '';
   console.log('The files will be Submitted!');
@@ -27,10 +28,10 @@ export const submitContentToIPFS = async(buffer) => {
       alert(returnMsg);
       console.log('ERROR: No data to submit');      
     }
-  /* example question1 (fate of the minstrels) address: QmSr8fFpgMm4x9mFB3NTyctKjfHLpKpzUkKCxNXrisfu9e
+  /* example question1 (fate of the minstrels) address:
       example URL: https://ipfs.infura.io/ipfs/QmSr8fFpgMm4x9mFB3NTyctKjfHLpKpzUkKCxNXrisfu9e
-      TimTheEnchanter w/wrapper:
-      https://ipfs.infura.io/ipfs/QmdoBFvW5N1HAJTjM6QaqLobaNJXJTkmuksbbkhXnpoVbk
+      Folder/filename wrapper:
+      https://ipfs.infura.io/ipfs/QmTAsn8GBQNthdnJnrUNdHgzk5SQnz1Ayby6DkqpCsdpR1
   */ 
 }
 export default submitContentToIPFS;

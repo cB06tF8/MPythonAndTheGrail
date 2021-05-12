@@ -1,0 +1,63 @@
+base URI: https://ipfs.infura.io/ipfs/
+
+questions-fix2.json:
+"Qmct9cCW3AAL4JLQLkGmKo2SfN2xJA9Kv5TpkuAaXRN9h6"
+"QmUm2YVc89SeTTfnCcfa2kooGH2xcidBoJ1uYWeksHnTk4" (folder/wrapper)
+
+
+sound when loosing the game: throwninthegorge.mp3
+"QmUZwBzSDf7eASPdJ28cEKDXeTi68LbuRyHEbPTapPtAxA"
+"QmdeDuTDQK6uUjZgkeL1ya5rVDXZVRNLc3rjyx9TKix2vy" (folder/wrapper)
+
+questions:
+What happened to Robin's minstrels?
+	Eaten by the others in the land of Nador
+	Killed by the ledgendary Black Beast of 'Aaaaaaahhhh!'
+	Became Knights of the Round Table
+
+What is the word the Knights of 'Ni' cannot stand to hear?
+	'It'
+	'Bum'
+	'Icky icky icki icki kapang zoop boing'
+
+To appease the Knights Who Formerly Said 'Ni', our heros must cut down a tree. What are they allowed to use?
+	An axe
+	A rabbit
+	A herring
+
+-----------still to upload---------
+In the movie, what is the name of the the person who supplies the shrubbery? -- mp_shrub.wav
+	Sir Galahad
+	The Knight Who Says 'Ni'
+	Roger
+
+What is the name of the Enchanter our heros encounter? -- mp_timtheenchanter.wav
+	Robin
+	Nador
+	Tim
+
+Who protects the cave of Caerbannorg? -- mp_rabbit.wav
+	The rabbit
+	Tim the Enchanter
+	Author, King of the Britons
+
+What is the correct number to count to before throwing the "Holy Hand Grenade"? --isolate the clip from mp_snuffit.wav
+	Three
+	Four
+	Five
+
+In the Camelot song, what does it say that you must "push-a-lot"? -- need to shorten the sound file: mp_kightssong.wav
+	Spam
+	Ham
+	Pram
+
+What did the Knights Who Say 'Ni' demand the 2nd time our heros face them? -- anotherShrub.wav
+	Another shrubbery
+	A rabbit
+	The head of the Black Knight
+
+
+How did Authur become King of the Britons? -- mp_thatsWhyImYourKing.wav
+	Knowing the air-speed velocity of an unladen swallow
+	Crossing the Bridge of Death
+	The Lady of the Lake gave Excalibur to him
