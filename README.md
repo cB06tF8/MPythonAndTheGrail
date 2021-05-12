@@ -41,11 +41,11 @@ the same questions in text form and the IPFS URI for the 'questions-fix2.json' i
 is lost. Both of these addresses are hard coded at the top of the Home.jsx file.
 
 ### Known Issues and Possible Upgrades
-I've been unable to find a way to save the javascript promise a(once fulfilled) to state after the file upload in order
-to display the value as html. For now, the developer has to use the F12 development tools to display this information on
+I've been unable to find a way to save the javascript promise to state (once fulfilled) after the file upload in order
+to display the value as html. For now, the developer has to use the F12 development tools to display the information for
 this page in order to copy it somewhere locally. Getting this to display as html would be great, as the IPFS address for 
 each upload is extremely important, either being recorded in the questions json file itself or being hard coded in the 
-Home.jsx file.
+Home.jsx file. That may be tackled in a future commit.
 
 ## This project is inteneded for educational purposes only 
 All sounds and pictures are &copy; Python (Monty) Pictures, Ltd.
