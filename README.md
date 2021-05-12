@@ -1,70 +1,48 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Monty Python and The Holy Grail Game
 
 ## Available Scripts
-
-In the project directory, you can run:
+To start the game, navigate to the project directory and run:
 
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Important Technical Details
+Technical issues were encountered using the latest version of ipfs-http-client (currently 05/11/2021) along with 
+some react components. Moving back to v33.1.1 solved these issues: 
 
-### `npm test`
+npm install --save ipfs-http-client@v33.1.1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm run build`
+## Structure of the Game Application
+The game consists of a React front end and IPFS (using the Infura gateway) as the backend. Audio clips from the movie 
+have been uploaded to IPFS and their addresses saved locally. A json file containing the questions, answers and the IPFS
+addresses for the corresponding audio files has also been uploaded to IPFS. 
+When a question is answered correctly, the address of the audio clip is read from the json file, which was downloaded 
+from IPFS and kept in state. It is sent to a hidden html audio player on the page.
+If a question is answered incorrectly, the player looses the game. Another sound clip is played when this happens, one 
+that corresponds to the final result in the movie where the character is thrown off the Bridge of Death into the Gorge
+of Eternal Peril.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The game also contains a second tab labeled 'Upload Files', which enables expansion or modification of the game.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to Expand the Game for Yourself
+The code for this game can easily be adapted for any trivia game that uses sound files. The 'Upload Files' tab allows for
+uploading your own sound files and questions json file to IPFS. Use the F12 to display the result of the upload. Current
+code also includes the '-w' option for IPFS uploads which will include the folder/filename wrapper in the return. (I'm not
+using this information for the game, but it may be useful someday). The smaller of the two response objects (should be the
+first object of the two) is the file contents, the second is the folder address. Copy the IPFS addresses and store locally
+temporarily, as you are uploading.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The questions and their answers are also uploaded to IPFS. The json structure for this can be seen in the 'questions-fix2.json' 
+file which is in the 'supplemental project info' folder at the base of this project. The 'questions and info.txt' contains 
+the same questions in text form and the IPFS URI for the 'questions-fix2.json' itself and the sound clip played when the game 
+is lost. Both of these addresses are hard coded at the top of the Home.jsx file.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Known Issues and Possible Upgrades
+I've been unable to find a way to save the javascript promise a(once fulfilled) to state after the file upload in order
+to display the value as html. For now, the developer has to use the F12 development tools to display this information on
+this page in order to copy it somewhere locally. Getting this to display as html would be great, as the IPFS address for 
+each upload is extremely important, either being recorded in the questions json file itself or being hard coded in the 
+Home.jsx file.
